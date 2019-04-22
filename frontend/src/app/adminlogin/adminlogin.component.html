@@ -1,0 +1,56 @@
+<div class="cont">
+  <section class="login-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <div class="login-form">
+                    <div class="login-icon"><i class="fa fa-user"></i></div>
+                    
+                    <div class="section-borders">
+                        <span></span>
+                        <span class="black-border"></span>
+                        <span></span>
+                    </div>
+                    
+                    <div class="login-title">Please Sign In</div>
+                    
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+                        
+                    
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                              <i class="fa fa-envelope"></i>
+                          </div>
+                          <input ngModel type="email" [(ngModel)]="model.adminUsername" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && adminUsername.invalid}"  name="adminUsername" class="form-control" placeholder="Type Email Address" required adminUsername style="margin: 0;">
+                          <div *ngIf="f.submitted && adminUsername.invalid" class="invalid-feedback">
+                              <div *ngIf="adminUsername.errors.required">Email Name is required</div>
+                              <div *ngIf="adminUsername.errors.email">Email must be a valid email Address</div>
+                            </div>
+                
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                                <i class="fa fa-unlock-alt"></i>
+                            </div>
+                          <input ngModel type="password" [(ngModel)]="model.adminPassword" #adminPassword="ngModel" [ngClass]="{'is-invalid':f.submitted && adminPassword.invalid}" class="form-control" name="adminPassword" placeholder="Type Password"  required minlength="6" style="margin: 0;">
+                          <div *ngIf="f.submitted && adminPassword.invalid" class="invalid-feedback">
+                              <div *ngIf="adminPassword.errors.required">Password Name is required</div>
+                              <div *ngIf="adminPassword.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
+                
+                        </div>
+                      </div>
+                      <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary" >LOGIN</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+  </section>
+  </div>

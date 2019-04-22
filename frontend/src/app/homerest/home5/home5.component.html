@@ -1,0 +1,27 @@
+<div class="slideshow-container1" style="background-color:#373A4D; text-align: center;">
+  <div style="text-align:center;padding-top: 285px;padding-left: 670px; position: absolute;">
+    <span class="dot1" onclick="currentSlide1(1)"></span> 
+    <span class="dot1" onclick="currentSlide1(2)"></span> 
+    <span class="dot1" onclick="currentSlide1(3)"></span> 
+  </div>
+   
+  <div class="cover">
+      <div *ngFor='let element of elements | slice:0:3'>
+        <div class='mySlides1 fade1'>
+                 <div class='di'>
+                <img class='i1' src='assets/image/hh.jpg' width='141px' height='123px'>
+                <div class='quote' style="margin-left: 190px;">
+                <p class='quo'><span style='font-size: 15px;font-weight: bolder;'>{{element.reviewName}}</span><br>{{element.reviewQuote}}</p></div>
+                
+                <div class='round' style="margin-left: 420px;">
+            
+                <p class='rev' style="line-height: 17px;"><span style='color:#BF163F;font-size: 12px;'>BLOOD<br>DONOR</span><span style='color:black;font-size: 12px;'>LIFE<br>SAVER</span></p></div>
+                <img class='i2' src='assets/image/yy.jpg' width='141px' height='123px'>
+                </div></div>
+            </div>
+            </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+

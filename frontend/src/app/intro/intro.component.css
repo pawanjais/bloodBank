@@ -1,0 +1,245 @@
+.login-area {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.login-form {
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 100px;
+        padding-bottom: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border: 1px solid #337AB7;
+}
+
+.login-icon {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #337AB7;
+    display: inline-block;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    font-size: 40px;
+    line-height: 95px;
+    color: #fff;
+    border-radius: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+
+.section-borders {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 60px;
+    left: 0;
+}
+
+.section-borders span {
+    height: 5px;
+    width: 50px;
+    display: inline-block;
+    background-color: #337AB7;
+    border-radius: 2px;
+}
+
+.section-borders span.black-border {
+    background-color: #999;
+    width: 30px;
+    margin: 0 10px;
+}
+
+.login-title {
+    background-color: #337AB7;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.login-form .input-group-addon {
+    background-color: transparent;
+    border-radius: 2px;
+    color: #337AB7;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form .input-group-addon i.fa {
+    width: 20px;
+    font-size: 20px;
+}
+
+.header {
+    overflow: hidden;
+    background-color: white;
+    padding: 0  150px 0 20px;
+    border-bottom: 2px solid rgb(211,211,211,0.6);
+    
+  }
+  
+  .header a {
+      
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 12px; 
+    font-weight: 100;
+    line-height: 25px;
+     
+  }
+  
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 3px 100px;
+  }
+  .header-right a.text2{
+      opacity:0.6;
+  }
+  
+  #red{
+  background-color: #FC575E;
+  color: white;
+  margin:0;
+  padding:12px 30px;
+  font-weight: 300;
+  font-size: 15px;
+  }
+  .header-right {
+    float: right;
+   
+  }
+
+
+
+
+
+
+/* body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.cont {
+    width: 100%;
+    margin-left: 300px;
+  }
+
+.login-area {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.login-form {
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 100px;
+        padding-bottom: 100px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    border: 1px solid #337AB7;
+}
+
+.login-icon {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-color: #337AB7;
+    display: inline-block;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    font-size: 40px;
+    line-height: 95px;
+    color: #fff;
+    border-radius: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+}
+
+.section-borders {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 60px;
+    left: 0;
+}
+
+.section-borders span {
+    height: 5px;
+    width: 50px;
+    display: inline-block;
+    background-color: #337AB7;
+    border-radius: 2px;
+}
+
+.section-borders span.black-border {
+    background-color: #999;
+    width: 30px;
+    margin: 0 10px;
+}
+
+.login-title {
+    background-color: #337AB7;
+    color: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.login-form .input-group-addon {
+    background-color: transparent;
+    border-radius: 2px;
+    color: #337AB7;
+}
+
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-form .input-group-addon i.fa {
+    width: 20px;
+    font-size: 20px;
+}
+
+.login-btn {
+    background-color: #337AB7;
+    color: #fff;
+    padding: 10px 30px;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 2px;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+} */

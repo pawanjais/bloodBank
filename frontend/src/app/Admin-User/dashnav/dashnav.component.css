@@ -1,0 +1,131 @@
+/* .main-sidebar, .navbar, .main-content, .main-footer {
+    transition: all 0.5s;
+}
+.main-sidebar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    z-index: 880;
+    left: 0;
+}
+
+.main-sidebar .sidebar-brand {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+
+.main-sidebar .sidebar-brand a {
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #000;
+}
+
+.main-sidebar .sidebar-brand.sidebar-brand-sm {
+    display: none;
+}
+
+.main-sidebar .sidebar-menu {
+    padding: 0;
+    margin: 0;
+}
+
+p, ul:not(.list-unstyled), ol {
+    line-height: 28px;
+}
+
+.main-sidebar .sidebar-menu li.menu-header {
+    padding: 3px 15px;
+    color: #bcc1c6;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    font-weight: 600;
+}
+
+.main-sidebar .sidebar-menu li {
+    display: block;
+}
+
+.dropdown, .dropleft, .dropright, .dropup {
+    position: relative;
+}
+
+body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu > li.active > a {
+    padding-left: 16px;
+    background-color: transparent;
+    position: relative;
+}
+
+.main-sidebar .sidebar-menu li.active a {
+    color: #6777ef;
+    font-weight: 600;
+    background-color: #fcfcfd;
+}
+.main-sidebar .sidebar-menu li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 20px;
+    width: 100%;
+    letter-spacing: 0.3px;
+    color: #868e96;
+    text-decoration: none;
+}
+.nav-link {
+    display: block;
+    padding: .5rem 1rem;
+}
+
+.main-sidebar .sidebar-menu li.menu-header:not(:first-child) {
+    margin-top: 10px;
+}
+
+.main-sidebar .sidebar-menu li a i {
+    width: 28px;
+    margin-right: 20px;
+    text-align: center;
+}
+.fas, .far, .fab, .fal {
+    font-size: 13px;
+}
+
+.main-sidebar .sidebar-menu li a span {
+    margin-top: 3px;
+    width: 100%;
+}
+
+.main-sidebar .sidebar-menu li a.has-dropdown:after {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    font-size: 12px;
+}
+
+.main-sidebar .sidebar-menu li ul.dropdown-menu {
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: static;
+    float: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+p, ul:not(.list-unstyled), ol {
+    line-height: 28px;
+} */

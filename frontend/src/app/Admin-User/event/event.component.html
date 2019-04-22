@@ -1,0 +1,50 @@
+
+
+<div *ngIf="data ==='active';then dash; else login"></div>
+<ng-template #dash>
+
+  <div class="col-12 col-sm-6 col-lg-6" style="padding:10px;display:inline-block;" *ngFor= "let l of active.event,let i1 = index">
+      <div class="card" *ngFor= "let l of active.event,let i1 = index">
+        
+          <div class="card-header">
+            <h4>{{l.eventName}}</h4>
+            
+            <div class="card-header-action">
+              <a data-toggle="collapse" [attr.data-target]="'#mycard-collapse' + i1" class="btn btn-icon btn-info"  ><i class="fas fa-minus"></i></a>
+            </div>
+          </div>
+          <div class="collapse show" id=mycard-collapse{{i1}}>
+            <div class="card-body">
+                {{l.eventDescription}}
+            </div>
+            <div class="card-footer">
+                {{l.eventLocation}}
+                <p>{{l.eventDate}}</p>
+            </div>
+          </div>
+        </div>
+  </div>
+
+</ng-template>
+
+<ng-template #login>
+  <div class="col-12 col-sm-6 col-lg-6" style="padding:10px;display:inline-block;" *ngFor= "let l of active.accevent,let i=index">
+      <div class="card" id="mycard-dimiss{{i}}" >
+        <div class="card-header">
+            <h4>{{l.aEventName}}</h4>
+            
+          <div class="card-header-action">
+            <a data-dismiss="alert" [attr.data-target]="'#mycard-dimiss' + i" class="btn btn-icon btn-danger"><i class="fas fa-times"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+            {{l.aEventDescription}}
+        </div>
+        <div class="card-footer">
+            {{l.aEventLocation}}
+            <p>{{l.aEventDate}}</p>
+        </div>
+      </div>
+  </div>
+
+</ng-template>

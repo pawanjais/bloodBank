@@ -1,0 +1,121 @@
+                <app-dashsection></app-dashsection>
+                <div class="row">
+                  <app-admin class="col-lg-6 col-md-6 col-12"></app-admin>
+                  <div class="col-lg-6 col-md-6 col-12">
+                      <div class="card">
+                        <div class="card-header">
+                          <h4 class="d-inline">Add Blood Bank</h4>
+                          
+                        </div>
+                        <div class="card-body">             
+                          <ul class="list-unstyled list-unstyled-border">
+                              <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+                                  
+                                  <div class="form-group row">
+                                    <label for="inputPassword6">Blood Bank Name</label>
+                                    <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.bBankName" #bBankName="ngModel" [ngClass]="{'is-invalid':f.submitted && bBankName.invalid}"  name="bBankName"  value=""  required bBankName>
+                                    <div *ngIf="f.submitted && bBankName.invalid" class="invalid-feedback">
+                                      <div *ngIf="bBankName.errors.required">Email Name is required</div>
+                                      <div *ngIf="bBankName.errors.email">Email must be a valid email Address</div>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                      <label for="inputPassword6">Address</label>
+                                      <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.bbankAddress" #bbankAddress="ngModel" [ngClass]="{'is-invalid':f.submitted && bbankAddress.invalid}"  name="bbankAddress"  value=""  required bbankAddress>
+                                      <div *ngIf="f.submitted && bbankAddress.invalid" class="invalid-feedback">
+                                        <div *ngIf="bbankAddress.errors.required">Email Name is required</div>
+                                        <div *ngIf="bbankAddress.errors.email">Email must be a valid email Address</div>
+                                      </div>
+                                    </div>
+                                  <div class="form-group row">
+                                    <label for="inputPassword6">Phone Number</label>
+                                    <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.bBankPhone" #bBankPhone="ngModel" [ngClass]="{'is-invalid':f.submitted && bBankPhone.invalid}"  name="bBankPhone" value="" placeholder=""  required bBankPhone>
+                                    <div *ngIf="f.submitted && bBankPhone.invalid" class="invalid-feedback">
+                                      <div *ngIf="bBankPhone.errors.required">Name is required</div>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                    <label for="inputPassword6">City</label>
+                                    <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.bBankCity" #bBankCity="ngModel" [ngClass]="{'is-invalid':f.submitted && bBankCity.invalid}" name="bBankCity" value="" placeholder="Type City"  required bBankCity>
+                                    <div *ngIf="f.submitted && bBankCity.invalid" class="invalid-feedback">
+                                      <div *ngIf="bBankCity.errors.required">Password Name is required</div>
+                                      <div *ngIf="bBankCity.errors.minlength">Password must be at least 6 characters</div>
+                                    </div>
+                                  </div>
+                                  <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                          </ul>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+
+                
+                <div class="row">
+                  <div class="col-lg-5 col-md-12 col-12 col-sm-12">
+                    <form name="form1" #f1="ngForm" (ngSubmit)="f.form.valid && onSubmit1()" novalidate>
+                      <div class="card">
+                        <div class="card-header">
+                          <h4>Post</h4>
+                        </div>
+                        <div class="card-body pb-0">
+                            <div class="form-group row">
+                                <label for="inputPassword6">Topic</label>
+                                <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.adminName" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && adminName.invalid}"  name="adminName" value="" placeholder=""  required adminName>
+                                <div *ngIf="f.submitted && adminName.invalid" class="invalid-feedback">
+                                  <div *ngIf="adminName.errors.required">Name is required</div>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="inputPassword6">Detail</label>
+                                <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.adminName" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && adminName.invalid}"  name="adminName" value="" placeholder=""  required adminName>
+                                <div *ngIf="f.submitted && adminName.invalid" class="invalid-feedback">
+                                  <div *ngIf="adminName.errors.required">Name is required</div>
+                                </div>
+                              </div>
+                              
+                        </div>
+                        <div class="card-footer pt-0">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-lg-7 col-md-12 col-12 col-sm-12">
+                    <div class="card">
+                      <div class="card-header">
+                        <h4>Latest Posts</h4>
+                        <div class="card-header-action">
+                          <a href="#" class="btn btn-primary">View All</a>
+                        </div>
+                      </div>
+                      <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-striped mb-0">
+                                <thead>
+                                  <tr>
+                                    <th>Topic</th>
+                                    <th>Detail</th>
+                                  </tr>
+                                </thead>
+                                <tbody>                         
+                                  <tr>
+                                    <td>Introduction Laravel 5</td>
+                                    <td>Bagus Dwi Cahya sdfgdf sdgg</td>  
+                                  </tr>
+                                  <tr>
+                                    <td>Introduction Angular 5</td>
+                                    <td>Bagus Dwi Cahya sdfgdf sdgg</td>  
+                                  </tr>
+                                  <tr>
+                                      <td>Introduction React 5</td>
+                                      <td>Bagus Dwi Cahya sdfgdf sdgg</td>  
+                                  </tr>
+                                 
+                                </tbody>
+                            </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>

@@ -1,0 +1,87 @@
+<form class="form" name="form" #f1="ngForm" (ngSubmit)="f1.form.valid" novalidate>
+                            
+    <div class="form-group">
+      <label for="inputPassword6">Donor Name</label>
+      <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorName" #donorName="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorName.invalid}"  name="donorName"  placeholder="Type Name" value="{{ele.donorName}}" required donorName>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword6">Donor Password</label>
+        <input class="form-control mx-sm-3" ngModel type="password" [(ngModel)]="model.donorPassword" #donorPassword="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorPassword.invalid}" name="donorPassword" placeholder="Type Password" value="{{ele.donorPassword}}" required minlength="6">
+        <div *ngIf="f1.submitted && donorPassword.invalid" class="invalid-feedback">
+            <div *ngIf="donorPassword.errors.required">Password Name is required</div>
+            <div *ngIf="donorPassword.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword6">Phone No</label>
+        <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorPhone" #donorPhone="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorPhone.invalid}"  name="donorPhone"  value="{{ele.donorPhone}}" placeholder="Type Name" required donorPhone>     
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword6">Identity</label>
+        <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorIdentity" #donorIdentity="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorIdentity.invalid}"  name="donorIdentity" value="{{ele.donorIdentity}}" placeholder="Type Name" required donorIdentity>     
+    </div> 
+
+    <div class="form-group">
+        <label for="inputPassword6">Email</label>
+        <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.donorEmail" #donorEmail="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorEmail.invalid}"  name="donorEmail" value="{{ele.donorEmail}}" placeholder="Type Email Address" required donorEmail>
+        <div *ngIf="f1.submitted && donorEmail.invalid" class="invalid-feedback">
+            <div *ngIf="donorEmail.errors.required">Email Name is required</div>
+            <div *ngIf="donorEmail.errors.email">Email must be a valid email Address</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword6">Age</label>
+        <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorAge" #donorAge="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorAge.invalid}"  name="donorAge" value="{{ele.donorAge}}" placeholder="Type Name" required donorAge>     
+    </div>
+
+    <div ngModelGroup="bloodType">
+    <div class="form-group">
+            <label >Blood Group</label>
+            <select class="form-control mx-sm-3" ngModel  placeholder="Select"  [(ngModel)]="model.bloodId" #bloodId="ngModel" [ngClass]="{'is-invalid':f1.submitted && bloodId.invalid}"  name="bloodId"  placeholder="Type Name" required bloodId>
+                <option value="100">A+</option>
+                <option value="101">A-</option>
+                <option value="102">B+</option>
+                <option value="103">B-</option>
+                <option value="104">AB+</option>
+                <option value="105">AB-</option>
+                <option value="106">O+</option>
+                <option value="107">O-</option>
+            </select>
+    </div>
+</div>
+    <div ngModelGroup="address">
+    <div class="form-group">
+        <label for="inputPassword6">Street</label>
+         <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressLocality" #addressLocality="ngModel" [ngClass]="{'is-invalid':f1.submitted && addressLocality.invalid}"  value="{{ele.address.addressLocality}}" name="addressLocality"  placeholder="Type Name" required addressLocality>     
+    </div>                                  
+    <div class="form-group">
+        <label for="inputPassword6">City</label>
+        <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressCity" #addressCity="ngModel" [ngClass]="{'is-invalid':f1.submitted && addressCity.invalid}"  name="addressCity" value="{{ele.address.addressCity}}" placeholder="Type Name" required addressCity>     
+    </div>    
+    
+    <div class="form-group">
+        <label for="inputPassword6">State</label>
+        <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressState" #addressState="ngModel" [ngClass]="{'is-invalid':f1.submitted && addressState.invalid}"  name="addressState" value="{{ele.address.addressState}}" placeholder="Type Name" required addressState>     
+     </div> 
+    </div>
+
+
+    <div ngModelGroup="gender">
+    <div class="form-group">
+            <label >Gender</label>
+            <select class="form-control mx-sm-3" ngModel  placeholder="Select"  [(ngModel)]="model.genderId" #genderId="ngModel" [ngClass]="{'is-invalid':f1.submitted && genderId.invalid}"  name="genderId"  placeholder="Type Name" required genderId>
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+                <option value="3">Other</option>
+            </select>
+    </div>
+</div>
+
+    
+
+    
+    <button type="submit" (click)="onSubmit1(f1.value)" data-dismiss="modal" class="btn btn-primary">Submit</button>
+  </form>

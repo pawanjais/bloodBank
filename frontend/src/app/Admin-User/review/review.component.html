@@ -1,0 +1,48 @@
+
+<div *ngIf="data ==='active';then dash; else login"></div>
+<ng-template #dash>
+
+  <div class="col-12 col-sm-6 col-lg-6" style="padding:10px;display:inline-block;" *ngFor= "let l of active.review,let i1 = index">
+      <div class="card" >
+        
+          <div class="card-header">
+            <h4>{{l.reviewName}}</h4>
+            
+            <div class="card-header-action">
+              <a data-collapse=#mycard-collapse class="btn btn-icon btn-info" href="#"><i class="fas fa-minus"></i></a>
+            </div>
+          </div>
+          <div class="collapse show" id=mycard-collapse>
+            <div class="card-body">
+                {{l.reviewQuote}}
+            </div>
+            <div class="card-footer">
+                
+                <p>Review Card</p>
+            </div>
+          </div>
+        </div>
+  </div>
+
+</ng-template>
+
+<ng-template #login>
+  <div class="col-12 col-sm-6 col-lg-6" style="padding:10px;display:inline-block;" *ngFor= "let l of active.accreview">
+      <div class="card" id="mycard-dimiss" >
+        <div class="card-header">
+            <h4>{{l.aReviewName}}</h4>
+            
+          <div class="card-header-action">
+            <a data-dismiss="#mycard-dimiss" class="btn btn-icon btn-danger" href="#"><i class="fas fa-times"></i></a>
+          </div>
+        </div>
+        <div class="card-body">
+            {{l.aReviewQuote}}
+        </div>
+        <div class="card-footer">
+          <p>Review Card</p>
+        </div>
+      </div>
+  </div>
+
+</ng-template>

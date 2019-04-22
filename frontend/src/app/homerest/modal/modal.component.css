@@ -1,0 +1,12 @@
+input[type=email],select {
+    margin: 10px 25px;
+    width: 45%;
+    background: transparent;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.row{
+    margin-left: 0;
+}

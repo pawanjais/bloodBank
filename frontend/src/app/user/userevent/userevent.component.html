@@ -1,0 +1,21 @@
+<div class="col-12 col-sm-6 col-lg-6" >
+  <div class="card" *ngFor= "let l of active,let i1 = index">
+    
+      <div class="card-header">
+        <h4>{{l.eventName}}</h4>
+        
+        <div class="card-header-action">
+          <a data-toggle="collapse" [attr.data-target]="'#mycard-collapse' + i1" class="btn btn-icon btn-info" ><i class="fas fa-minus"></i></a>
+        </div>
+      </div>
+      <div class="collapse show" id=mycard-collapse{{i1}}>
+        <div class="card-body">
+            {{l.eventDescription}}
+        </div>
+        <div class="card-footer">
+            {{l.eventLocation}}
+            <p>{{l.eventDate}}</p>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-3" *ngFor= "let l of ele.blood,let i = index">
+    <div class="card card-danger">
+        
+      <div class="card-header">
+        <h4>{{l.bloodType}}</h4>
+        <div class="card-header-action">
+            <i class="fas fa-tint fa-3x" style="font-size:3rem;color:red"></i>
+          </div>
+      </div>
+      
+      <div class="card-body">
+        <p>{{ele.count[i]}} <code>No of Donor</code></p>
+      </div>
+    </div>
+  </div>
+</div>

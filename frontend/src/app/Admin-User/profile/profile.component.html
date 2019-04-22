@@ -1,0 +1,65 @@
+<div *ngIf="data ==='profile';then dash; else login"></div>
+<ng-template #dash>
+
+  <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+   
+    <div class="form-group row">
+      <label for="inputPassword6">Email</label>
+      <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.adminUsername" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && adminUsername.invalid}"  name="adminUsername"  value="{{ele.adminUsername}}" placeholder="{{ele.adminUsername}}" required adminUsername readonly>
+      <div *ngIf="f.submitted && adminUsername.invalid" class="invalid-feedback">
+        <div *ngIf="adminUsername.errors.required">Email Name is required</div>
+        <div *ngIf="adminUsername.errors.email">Email must be a valid email Address</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword6">Username</label>
+      <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.adminName" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && adminName.invalid}"  name="adminName" value="{{ele.adminName}}" placeholder="{{ele.adminName}}"  required adminName>
+      <div *ngIf="f.submitted && adminName.invalid" class="invalid-feedback">
+        <div *ngIf="adminName.errors.required">Name is required</div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword6">Password</label>
+      <input class="form-control mx-sm-3" ngModel type="password" [(ngModel)]="model.adminPassword" #adminPassword="ngModel" [ngClass]="{'is-invalid':f.submitted && adminPassword.invalid}" name="adminPassword" value="{{ele.adminPassword}}" placeholder="Type Password"  required minlength="6">
+      <div *ngIf="f.submitted && adminPassword.invalid" class="invalid-feedback">
+        <div *ngIf="adminPassword.errors.required">Password Name is required</div>
+        <div *ngIf="adminPassword.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</ng-template>
+
+<ng-template #login>
+  <form class="form" name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+    
+    <div class="form-group">
+      <label for="inputPassword6">Email</label>
+      <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.adminUsername" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && adminUsername.invalid}"  name="adminUsername"  placeholder="Type Email Address" required adminUsername>
+      <div *ngIf="f.submitted && adminUsername.invalid" class="invalid-feedback">
+        <div *ngIf="adminUsername.errors.required">Email Name is required</div>
+        <div *ngIf="adminUsername.errors.email">Email must be a valid email Address</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="inputPassword6">UserName</label>
+      <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.adminName" #adminName="ngModel" [ngClass]="{'is-invalid':f.submitted && adminName.invalid}"  name="adminName"  placeholder="Type Name" required adminName>
+      <div *ngIf="f.submitted && adminName.invalid" class="invalid-feedback">
+        <div *ngIf="adminName.errors.required">Name is required</div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="inputPassword6">Password</label>
+      <input class="form-control mx-sm-3" ngModel type="password" [(ngModel)]="model.adminPassword" #adminPassword="ngModel" [ngClass]="{'is-invalid':f.submitted && adminPassword.invalid}" name="adminPassword" placeholder="Type Password"  required minlength="6">
+      <div *ngIf="f.submitted && adminPassword.invalid" class="invalid-feedback">
+        <div *ngIf="adminPassword.errors.required">Password Name is required</div>
+        <div *ngIf="adminPassword.errors.minlength">Password must be at least 6 characters</div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</ng-template>

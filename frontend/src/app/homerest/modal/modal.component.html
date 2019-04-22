@@ -1,0 +1,273 @@
+<style>
+  label, input {
+  /* in order to define widths */
+  display: inline-block;
+}
+label{
+  width:35%;
+padding: 14px 15px;
+  margin: 10px 10px;
+  border: none;
+}
+input[type=text], input[type=password],input[type=date] ,input[type=file]{
+  
+  margin: 10px 25px;
+  width: 45%;
+  background: transparent;
+  padding: 12px 20px;
+  
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  
+}
+input[type=file]{
+display: inline-block;
+
+}
+
+.but {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 250px;
+  border: none;
+  cursor: pointer;
+  width: 30%;
+  align-content :left;
+}
+
+.but:hover {
+  opacity: 0.8;
+}
+
+::placeholder {
+color: black;
+}
+
+</style>
+
+<br>
+<!-- <div class="row center">
+  <img class="img-section2 col-sm-12 col-xs-12 col-lg-12 col-md-12" src="assets/image/con11.jpg" usemap="#planetmap"/>
+  <map name="planetmap">
+    <area shape="rect" coords="0,0,82,126" alt="Sun" href="sun.htm">
+   
+  </map>
+  </div> -->
+
+
+  <div class="section1">
+    <div class="img-section">
+      <button class="btn2" data-toggle="modal" data-target="#ModalLoginForm"><span style="opacity:0.8;">Donate</span></button>
+      <button class="btn3" data-toggle="modal" data-target="#ModalLoginForm1"><span style="opacity:0.8;">Find Donor</span></button>
+    </div>
+  </div> 
+  <div id="ModalLoginForm" class="modal fade">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login</h3>
+            </div>
+            {{value | json}}
+            <div class="modal-body">
+                    <form class="form" name="form" #f1="ngForm" (ngSubmit)="f1.form.valid" novalidate>
+                            <div class="row" >
+                            <div class="col-sm-6">
+                            <div class="form-group">
+                              <label for="inputPassword6">Donor Name</label>
+                              <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorName" #donorName="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorName.invalid}"  name="donorName"  placeholder="Type Name" required donorName>
+                            </div>
+                            </div>
+                            <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputPassword6">Donor Password</label>
+                                <input class="form-control mx-sm-3" ngModel type="password" [(ngModel)]="model.donorPassword" #donorPassword="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorPassword.invalid}" name="donorPassword" placeholder="Type Password"  required minlength="6">
+                                <div *ngIf="f1.submitted && donorPassword.invalid" class="invalid-feedback">
+                                    <div *ngIf="donorPassword.errors.required">Password Name is required</div>
+                                    <div *ngIf="donorPassword.errors.minlength">Password must be at least 6 characters</div>
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row" >
+                                    <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputPassword6">Phone No</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorPhone" #donorPhone="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorPhone.invalid}"  name="donorPhone"  placeholder="Type Name" required donorPhone>     
+                            </div>
+                            </div>
+                            <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputPassword6">Identity</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorIdentity" #donorIdentity="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorIdentity.invalid}"  name="donorIdentity"  placeholder="Type Name" required donorIdentity>     
+                            </div> 
+                            </div>
+                            </div>
+                            <div class="row" >
+                                    <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputPassword6">Email</label>
+                                <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.donorEmail" #donorEmail="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorEmail.invalid}"  name="donorEmail"  placeholder="Type Email Address" required donorEmail>
+                                <div *ngIf="f1.submitted && donorEmail.invalid" class="invalid-feedback">
+                                    <div *ngIf="donorEmail.errors.required">Email Name is required</div>
+                                    <div *ngIf="donorEmail.errors.email">Email must be a valid email Address</div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputPassword6">Age</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.donorAge" #donorAge="ngModel" [ngClass]="{'is-invalid':f1.submitted && donorAge.invalid}"  name="donorAge"  placeholder="Type Name" required donorAge>     
+                            </div>
+                            </div>
+                            </div>
+                            <div class="row" >
+                                    <div class="col-sm-6">
+                            <div ngModelGroup="bloodType">
+                            <div class="form-group">
+                                    <label >Blood Group</label>
+                                    <select class="form-control mx-sm-3" ngModel  placeholder="Select"  [(ngModel)]="model.bloodId" #bloodId="ngModel" [ngClass]="{'is-invalid':f1.submitted && bloodId.invalid}"  name="bloodId"  placeholder="Type Name" required bloodId>
+                                        <option value="100">A+</option>
+                                        <option value="101">A-</option>
+                                        <option value="102">B+</option>
+                                        <option value="103">B-</option>
+                                        <option value="104">AB+</option>
+                                        <option value="105">AB-</option>
+                                        <option value="106">O+</option>
+                                        <option value="107">O-</option>
+                                    </select>
+                            </div>
+                        </div>
+                        </div>
+                            <div ngModelGroup="address">
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="inputPassword6">Street</label>
+                                 <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressLocality" #addressLocality="ngModel" [ngClass]="{'is-invalid':f1.submitted && addressLocality.invalid}"  name="addressLocality"  placeholder="Type Name" required addressLocality>     
+                            </div> 
+                            </div>
+                            </div>   
+                            
+                            
+                           
+                            <div class="form-group">
+                                <label for="inputPassword6">City</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressCity" #addressCity="ngModel" [ngClass]="{'is-invalid':f1.submitted && addressCity.invalid}"  name="addressCity"  placeholder="Type Name" required addressCity>     
+                            </div>    
+                           
+                            <div class="form-group">
+                                <label for="inputPassword6">State</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressState" #addressState="ngModel" [ngClass]="{'is-invalid':f1.submitted && addressState.invalid}"  name="addressState"  placeholder="Type Name" required addressState>     
+                             </div> 
+                            </div>
+                            
+
+                            <div ngModelGroup="gender">
+                            <div class="form-group">
+                                    <label >Gender</label>
+                                    <select class="form-control mx-sm-3" ngModel  placeholder="Select"  [(ngModel)]="model.genderId" #genderId="ngModel" [ngClass]="{'is-invalid':f1.submitted && genderId.invalid}"  name="genderId"  placeholder="Type Name" required genderId>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        <option value="3">Other</option>
+                                    </select>
+                            </div>
+                        </div>
+
+                            
+                        
+                            
+                            <button type="submit" (click)="onSubmit1(f1.value)" data-dismiss="modal" class="btn btn-primary">Submit</button>
+                          </form>
+                
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="ModalLoginForm1" class="modal fade">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Search Donor</h3>
+            </div>
+            <div class="modal-body">
+                    <form class="form" name="form1" #f2="ngForm" (ngSubmit)="f2.form1.valid" novalidate>
+                            <div class="row" >
+                                    <div class="col-sm-6">
+                            <div class="form-group">
+                              <label for="inputPassword6">Reciver Name</label>
+                              <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.reciverName" #reciverName="ngModel"  name="reciverName"  placeholder="Type Name" required reciverName>
+                            </div>
+                            </div>
+                            <div class="col-sm-6">
+                            <div class="form-group">
+                                    <label for="inputPassword6">Identity</label>
+                                    <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.reciverIdentity" #reciverIdentity="ngModel"   name="reciverIdentity"  placeholder="Type Name" required reciverIdentity>     
+                            </div>
+                        </div>
+                        </div> 
+                        <div class="row" >
+                                <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="inputPassword6">Phone No</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.reciverPhone" #reciverPhone="ngModel"  name="reciverPhone"  placeholder="Type Name" required reciverPhone>     
+                            </div>
+                            </div>
+                            <div class="col-sm-6">
+
+                            <div class="form-group">
+                                <label for="inputPassword6">Email</label>
+                                <input class="form-control mx-sm-3" ngModel type="email" [(ngModel)]="model.reciverEmail" #reciverEmail="ngModel" name="reciverEmail"  placeholder="Type Email Address" required reciverEmail>
+                                
+                            </div>
+                        </div>
+                        </div>
+                            <div ngModelGroup="bloodType">
+                            <div class="form-group">
+                                    <label >Blood Group</label>
+                                    <select class="form-control mx-sm-3" ngModel  placeholder="Select"  [(ngModel)]="model.bloodId" #bloodId="ngModel"   name="bloodId"  placeholder="Type Name" required bloodId>
+                                        <option value="100">A+</option>
+                                        <option value="101">A-</option>
+                                        <option value="102">B+</option>
+                                        <option value="103">B-</option>
+                                        <option value="104">AB+</option>
+                                        <option value="105">AB-</option>
+                                        <option value="106">O+</option>
+                                        <option value="107">O-</option>
+                                    </select>
+                            </div>
+                        </div>
+                            <div ngModelGroup="address">
+                            <div class="form-group">
+                                <label for="inputPassword6">Street</label>
+                                 <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressLocality" #addressLocality="ngModel"   name="addressLocality"  placeholder="Type Name" required addressLocality>     
+                            </div>                                  
+                            <div class="form-group">
+                                <label for="inputPassword6">City</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressCity" #addressCity="ngModel"   name="addressCity"  placeholder="Type Name" required addressCity>     
+                            </div>    
+                            
+                            <div class="form-group">
+                                <label for="inputPassword6">State</label>
+                                <input class="form-control mx-sm-3" ngModel type="text" [(ngModel)]="model.addressState" #addressState="ngModel"   name="addressState"  placeholder="Type Name" required addressState>     
+                             </div> 
+                            </div>
+
+
+                            
+
+                            
+                        
+                            
+                            <button type="submit" (click)="onClick(f2.value)" data-dismiss="modal" class="btn btn-primary">Submit</button>
+                          </form>
+                
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<hr>
+

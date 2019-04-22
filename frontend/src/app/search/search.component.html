@@ -1,0 +1,61 @@
+<div class="jumbotron jumbotext" style="padding-top: 70px">
+    <div class="container text-center">
+      <h3>Blood Banks In The City</h3>
+      <!-- <h1>My Portfolio</h1>      
+      <p>Some text that represents "Me"...</p> -->
+      <div class="container">
+            
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+          
+        
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <div class="item active">
+                <h1>Hello Recievers!!!</h1>
+                <h2>We Are Happy To Help You !!!</h2>
+                
+              </div>
+        
+              <div class="item" *ngFor="let bb of ele.bb">
+              <h2>{{bb.bBankName}}</h2> 
+              <h3>{{bb.bbankaddress}}</h3> 
+              <h3>{{bb.bBankCity}}</h3>
+              </div>
+            
+              
+            </div>
+        
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+    </div>
+  </div>
+  
+    
+  <div class="container-fluid bg-3 text-center">    
+   <h3>Our Donors</h3>
+    <div class="row">
+      <div class="colu" *ngFor="let d of ele.don">
+        <div class="card-rows">
+	    			<div class="card">
+	    	
+				      <img class="card-img-top im" src="assets\image\a2.png" alt="Card image">
+				      <div class="card-body text-center">
+				        <h4 class="card-title">{{d.donorName}}</h4>
+				      	<p class="card-text">{{d.bloodType.bloodType}}</p>
+				      	<a class="btn btn-primary" href="GetDetail?empId=${emp.empId}">Send Request</a><br><br>
+				      </div>
+				    </div>
+            </div>
+            </div>
+    </div>
+  </div><br>

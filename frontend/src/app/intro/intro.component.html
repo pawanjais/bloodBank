@@ -1,0 +1,165 @@
+<div class="header">
+    <a href="#default" class="logo"><img class="logo" src="assets/image/logocts.png"></a>
+    <div class="header-right">
+      <a class="text2" routerLink="blood">Home</a>
+      <a class="text2" data-toggle="modal" data-target="#ModalLoginForm2" >SIGN IN</a>
+      <a id="red" routerLink="emergency">EMERGENCY</a>
+    </div>
+  </div>
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(243, 136, 136);left:0;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" href="#" style="font-weight: bold; color: #423e3e">Blood Bank</a>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="blood">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#ModalLoginForm2">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="">{{guest}}</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> 
+        <button class="btn btn-outline-danger my-2 my-sm-0" routerLink="emergency">Emergency</button>
+      </form>
+    </div>
+  </nav> -->
+  <router-outlet></router-outlet>
+
+  <div id="ModalLoginForm2" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Login</h3>
+            </div>
+            <div class="modal-body">
+              <form name="form" #f="ngForm" (ngSubmit)="f.form.valid" novalidate>
+                
+            
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                      <i class="fa fa-envelope"></i>
+                  </div>
+                  <input ngModel type="text" [(ngModel)]="model.donorName" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && donorName.invalid}"  name="donorName" class="form-control" placeholder="Type Email Address" required adminUsername style="margin: 0;">
+                  <div *ngIf="f.submitted && donorName.invalid" class="invalid-feedback">
+                      <div *ngIf="donorName.errors.required">user Name is required</div>
+                      <div *ngIf="donorName.errors.email">user must be a valid user name</div>
+                    </div>
+        
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                        <i class="fa fa-unlock-alt"></i>
+                    </div>
+                  <input ngModel type="password" [(ngModel)]="model.donorPassword" #adminPassword="ngModel" [ngClass]="{'is-invalid':f.submitted && donorPassword.invalid}" class="form-control" name="donorPassword" placeholder="Type Password"  required minlength="4" style="margin: 0;">
+                  <div *ngIf="f.submitted && donorPassword.invalid" class="invalid-feedback">
+                      <div *ngIf="donorPassword.errors.required">Password Name is required</div>
+                      <div *ngIf="donorPassword.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+        
+                </div>
+              </div>
+              <div class="form-group text-center">
+                    <button type="submit" (click)="onSubmit()" data-dismiss="modal" class="btn btn-primary" >Login</button>
+              </div>
+            </form>
+                
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="cont">
+  <section class="login-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+                <div class="login-form">
+                    <div class="login-icon"><i class="fa fa-user"></i></div>
+                    
+                    <div class="section-borders">
+                        <span></span>
+                        <span class="black-border"></span>
+                        <span></span>
+                    </div>
+                    
+                    <div class="login-title">Please Sign In</div>
+                    
+                    <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()" novalidate>
+                        {{f.value | json}}
+                    
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                              <i class="fa fa-envelope"></i>
+                          </div>
+                          <input ngModel type="text" [(ngModel)]="model.donorName" #adminUsername="ngModel" [ngClass]="{'is-invalid':f.submitted && donorName.invalid}"  name="donorName" class="form-control" placeholder="Type Email Address" required adminUsername>
+                          <div *ngIf="f.submitted && donorName.invalid" class="invalid-feedback">
+                              <div *ngIf="donorName.errors.required">user Name is required</div>
+                              <div *ngIf="donorName.errors.email">user must be a valid user name</div>
+                            </div>
+                
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group">
+                          <div class="input-group-addon">
+                                <i class="fa fa-unlock-alt"></i>
+                            </div>
+                          <input ngModel type="password" [(ngModel)]="model.donorPassword" #adminPassword="ngModel" [ngClass]="{'is-invalid':f.submitted && donorPassword.invalid}" class="form-control" name="donorPassword" placeholder="Type Password"  required minlength="4">
+                          <div *ngIf="f.submitted && donorPassword.invalid" class="invalid-feedback">
+                              <div *ngIf="donorPassword.errors.required">Password Name is required</div>
+                              <div *ngIf="donorPassword.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
+                
+                        </div>
+                      </div>
+                      <div class="form-group text-center">
+                            <button type="submit" class="btn login-btn" >LOGIN</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+  </section>
+  </div> -->
